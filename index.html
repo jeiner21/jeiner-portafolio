@@ -15,7 +15,7 @@
     Jeiner.dev
 </div>
 
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="menu-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
         <ul id="menu">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#about">Sobre mí</a></li>
@@ -99,11 +99,22 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
-    </script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    const icon = document.querySelector(".menu-icon i");
+
+    menu.classList.toggle("show");
+
+    if (menu.classList.contains("show")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+}
+</script>
+
 
 </body>
 </html>
